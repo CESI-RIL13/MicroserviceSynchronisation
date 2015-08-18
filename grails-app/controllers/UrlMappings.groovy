@@ -1,6 +1,13 @@
 class UrlMappings {
 
     static mappings = {
+
+        "/bon-commandes"(resources:"bonCommande") {
+            "/produits"(resources:"produit")
+        }
+        "/produits"(resources:"produit") {
+            "/bon-commande"(resource:"bonCommande")
+        }
         "/$controller/$action?/$id?(.$format)?"{
             constraints {
                 // apply constraints here
